@@ -35,14 +35,10 @@ Before you begin, ensure you have the following installed:
    ```bash
    git clone https://github.com/ASHENEE123/Image_to_Pdf-tool.git
    cd Image_to_Pdf-tool
+   npm init 
    ```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Install required packages**
+2. **Install required packages**
    ```bash
    npm install express pdf-lib multer
    ```
