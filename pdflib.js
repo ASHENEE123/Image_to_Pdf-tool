@@ -4,7 +4,6 @@ import fs from "fs/promises"
 import multer from "multer"
 const app=express()
 
-const upload=multer(storage:multer.memoryStorage(),)
 //creating new pdf
 const pdf=await PDFDocument.create()
 const page=pdf.addPage()
@@ -17,7 +16,7 @@ page.drawText("hello this is first pdf created by me",{
 })
 //loading the existing file
 try{
-const path=await fs.readFile("./views/Nikhil Kulkarni.pdf")
+const path=await fs.readFile("Add File path")
 const newpdf=await PDFDocument.load(path)
 const page1=newpdf.getPages()
 const firstpage=page1[0]
@@ -33,7 +32,7 @@ catch(err){
 }
 
 //embeddding the image and testing it 
-const img="./views/d368839b8d699375645d84fe6d98cd57.jpg"
+const img="Add file path"
 try{
 const imgread= await fs.readFile(img)
 const jpeg =await pdf.embedJpg(imgread)
@@ -48,7 +47,7 @@ page2.drawImage(jpeg,{
     height:jpg.height
 })
 const save=await pdf.save();
-const rout="./views/output1.pdf"
+const rout="./views/output1.pdf" ##create folder of views for the result
 await fs.writeFile(rout,save)
 setTimeout(async function clear(){
     await fs.unlink(rout)
@@ -58,4 +57,5 @@ setTimeout(async function clear(){
 catch(err){
     console.log(err.message)
 }
+
 
